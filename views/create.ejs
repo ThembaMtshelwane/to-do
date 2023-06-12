@@ -7,17 +7,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Create/Add Task</h1>
-    <div id="create-task-form">
-        <form>
-            <label for="name">Task name</label>
-            <input type="text" id="name" required>
+    <main>
+        <%- include('./partials/nav.ejs') %>
+        <h1>Create/Add Task</h1>
+        <div id="create-task-form">
+            <form>
+                <label for="name">Task name</label>
+                <input type="text" id="name" required>
+    
+                <label for="description">Task Description</label>
+                <input type="text" id="description" required>
+    
+                <button>Submit</button>
+            </form>
+        </div>
+        <%- include('./partials/foot.ejs') %>
 
-            <label for="description">Task Description</label>
-            <input type="text" id="description" required>
-
-            <button>Submit</button>
-        </form>
-    </div>
+    </main>
 </body>
 </html>
