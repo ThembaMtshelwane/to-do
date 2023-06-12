@@ -11,12 +11,12 @@
         <%- include('./partials/nav.ejs') %>
         <h1>Create/Add Task</h1>
         <div id="create-task-form">
-            <form>
-                <label for="name">Task name</label>
-                <input type="text" id="name" required>
+            <form action="/tasks" method="POST">
+                <label for="title" >Task title</label>
+                <input type="text" id="title" name="title" required>
     
                 <label for="description">Task Description</label>
-                <input type="text" id="description" required>
+                <input type="text" id="description" name="description" required>
     
                 <button>Submit</button>
             </form>

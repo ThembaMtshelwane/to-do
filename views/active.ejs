@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Tasks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <%- include('./partials/nav.ejs') %>
+   
+    <h1>Active Tasks</h1> 
+    <% if (tasks.length>0) { %>
+        <% tasks.forEach(task => {%>
+            <a href="/tasks/<%=task._id%>">
+                <h3 class="title"><%=task.title%></h3>
+                <p class="description"><%=task.description%></p>
+            </a>
+        <%  }) %>
+    <% } else { %>
+        <h3>No Active Tasks</h3>
+    <% } %>
+    
+    
+    <%- include('./partials/foot.ejs') %>
+</body>
+</html>
