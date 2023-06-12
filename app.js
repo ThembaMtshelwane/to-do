@@ -25,7 +25,7 @@ app.use(express.static('public'))
 
 //Home Page
 app.get('/', (req,res)=>{
-    res.render('index')
+   res.redirect('/tasks')
 })
 
 //  Dashboard Page
@@ -38,9 +38,19 @@ app.get('/about', (req,res)=>{
     res.render('about')
 })
 
+/* ****** Tasks Routes ******/
 //Create Task
 app.get('/tasks/create', (req,res)=>{
     res.render('create')
+})
+
+// Get all tasks
+app.get('/tasks', (req,res)=>{
+    Task.find().sort({createdAt:-1})
+     .then((result)=>{
+        res.render('index',{tasks:result})
+     })
+     .catch((err)=>{console.log(err)})
 })
 
 // Page not found
