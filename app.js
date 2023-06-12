@@ -11,7 +11,7 @@ app.set('view engine', 'ejs')
 app.listen(PORT)
 
 // middleware and static files
-app.user(express.static('public'))
+app.use(express.static('public'))
 
 
 //Home Page
