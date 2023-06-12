@@ -10,6 +10,10 @@ app.set('view engine', 'ejs')
 // listen for requests
 app.listen(PORT)
 
+// middleware and static files
+app.user(express.static('public'))
+
+
 //Home Page
 app.get('/', (req,res)=>{
     res.render('index')
