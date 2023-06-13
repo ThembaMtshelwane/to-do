@@ -25,7 +25,7 @@ const task_details = (req,res)=>{
      .then((result)=>{
         res.render('tasks/details',{taskInfo:result})
      })
-     .catch((err)=>{console.log(err)})
+     .catch((err)=>{ res.status(404).render('404')})
 }
 
 //Go to create task form controller
@@ -47,9 +47,9 @@ const task_create_post= (req,res)=>{
 const task_delete= (req,res)=>{
     const id = req.params.id;
     
-    Blog.findByIdAndDelete(id)
+    Task.findByIdAndDelete(id)
       .then(result => {
-        res.json({ redirect: '/blogs' });
+        res.json({ redirect: '/tasks/active' });
       })
       .catch(err => {
         console.log(err);

@@ -9,8 +9,11 @@
        <div class="description-content">
            <p><%= taskInfo.description%></p>
        </div>
+       <a class="delete" data-doc="<%= taskInfo._id %>">
+          <img src="/trashcan.svg" alt="delete icon">
+       </a>
     </div>
-    
     <%- include('../partials/foot.ejs') %>
+    <script src="/deleteFunction.js"></script>
 </body>
 </html>

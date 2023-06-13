@@ -22,6 +22,7 @@ app.set('view engine', 'ejs')
 
 // middleware and static files
 app.use(express.static('public'))
+app.use(express.static('modules'))
 app.use(express.urlencoded({extended:true}))
 
 //Home Page
