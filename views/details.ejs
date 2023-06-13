@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>  
+    
+    <div class="details-content">
+       <h2><%= taskInfo.title%></h2>
+       <div class="description-content">
+           <p><%= taskInfo.description%></p>
+       </div>
+    </div>
+    
+    <%- include('./partials/foot.ejs') %>
+</body>
+</html>

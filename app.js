@@ -40,11 +40,11 @@ app.get('/about', (req,res)=>{
 })
 
 /* ****** Tasks Routes ******/
+
 //Go to create task form
 app.get('/tasks/create', (req,res)=>{
     res.render('create')
 })
-
 // Get all tasks
 
 app.get('/tasks/active', (req,res)=>{
@@ -63,7 +63,17 @@ app.get('/tasks/previous', (req,res)=>{
      .catch((err)=>{console.log(err)})
 })
 
-// Get a specific task
+// Create a task
+app.post('/tasks', (req,res)=>{
+    const task = new Task(req.body)
+    task.save()
+     .then((result)=>{
+       res.redirect('/tasks/active')
+     })
+    .catch((err)=>{console.log(err)})
+})
+
+//Get a specific task
 app.get('/tasks/:id', (req,res)=>{
     const id = req.params.id
     Task.findById(id)
@@ -73,15 +83,19 @@ app.get('/tasks/:id', (req,res)=>{
      .catch((err)=>{console.log(err)})
 })
 
-// Create a task
-app.post('/tasks', (req,res)=>{
-    const task = new Task(req.body)
-    task.save()
-     .then((result)=>{
-       res.redirect('/active-tasks')
-     })
-    .catch((err)=>{console.log(err)})
-})
+// Delete a specific task
+app.delete('/tasks/:id', (req, res) => {
+    const id = req.params.id;
+    
+    Blog.findByIdAndDelete(id)
+      .then(result => {
+        res.json({ redirect: '/blogs' });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  });
+
 
 
 // Page not found
