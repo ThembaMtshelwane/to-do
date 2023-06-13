@@ -2,22 +2,22 @@
 <html lang="en">
     <%- include('../partials/head.ejs') %>
 <body>
+    <%- include('../partials/nav.ejs') %>
     <main>
-        <%- include('../partials/nav.ejs') %>
         <h1>Create/Add Task</h1>
         <div id="create-task-form">
             <form action="/tasks" method="POST">
-                <label for="title" >Task title</label>
-                <input type="text" id="title" name="title" required>
-    
-                <label for="description">Task Description</label>
-                <input type="text" id="description" name="description" required>
-    
-                <button>Submit</button>
+                
+                <label for="title" >Task title:</label>
+                <input type="text" id="title" name="title" required>                   
+                
+                <label for="description">Task Description:</label>
+                <textarea  id="description" name="description" cols="50" rows="10" required></textarea>
+
+                <button id="submit-form-btn">Submit</button>
             </form>
         </div>
-        <%- include('../partials/foot.ejs') %>
-
     </main>
+    <%- include('../partials/foot.ejs') %>
 </body>
 </html>

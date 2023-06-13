@@ -1,7 +1,8 @@
 body{
     font-size: 16px;
+    font-family: 'Dosis', sans-serif;
     background-color: #151515;
-    color: gainsboro;
+    color: gainsboro;    
 }
 
 /*nav styles*/
@@ -10,7 +11,7 @@ nav{
     flex-direction: row;
     border: 2px solid gainsboro;
     border-radius: 5px;
-    justify-content: flex-end
+    justify-content: flex-end;
 }
 
 .nav-content{
@@ -23,9 +24,74 @@ nav{
 
 #logo{
     flex-grow: 4; /* default 0 */
-    border: 2px solid red;
     border-radius: 5px 0px 0px 5px;
 }
 
 
 /*dashboard styles*/
+h1{
+    text-decoration: underline;
+}
+
+.action{
+    border: 1px solid gainsboro;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#add-tasks, #active-tasks,#previous-tasks{
+    transition: background 500ms ease-in;
+}
+
+#add-tasks:hover{
+    background: #53d9d1;
+    color: #151515;
+}
+
+#active-tasks:hover{
+    background:#eb7132;
+    color: #151515;
+}
+
+#previous-tasks:hover{
+    background: #f27b9b;
+    color: #151515;
+}
+
+/*create/add task styles*/
+
+main {
+    padding: 10px 10vw;
+}
+
+ form{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    margin-top: 10px;
+}
+
+#submit-form-btn{
+    margin-top: 10px;
+    align-self: center;
+    color: gainsboro;
+    background-color: #53d9d1;
+    box-shadow: 1px 1px 5px 0px rgba(83, 217, 209,0.5);
+    border: 0px solid #151515 ;
+    cursor: pointer;
+}
+
+#submit-form-btn:hover{
+    background-color: #53d9d1;
+    color: #151515;
+}
+
+#description, #title{
+    box-shadow: 1px 1px 5px 5px rgba(83, 217, 209,0.5);
+}
+
