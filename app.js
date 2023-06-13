@@ -27,7 +27,7 @@ app.use(express.urlencoded({extended:true}))
 
 //Home Page
 app.get('/', (req,res)=>{
-  res.send('<p>Show animation</p>')
+  res.send("<p>Show animation</p> <a href='/dashbaord'>Dash</a>")
 })
 
 //  Dashboard Page
