@@ -1,61 +1,22 @@
 const express = require('express')
 const router = express.Router()
-const Task = require('../models/tasks')
+const taskController = require('../controllers/taskController')
 
 //Go to create task form
-router.get('/create', (req,res)=>{
-    res.render('create')
-})
+router.get('/create', taskController.task_get_form)
+
 // Get all tasks
-
-router.get('/active', (req,res)=>{
-    Task.find().sort({createdAt:-1})
-     .then((result)=>{
-        res.render('active',{tasks:result})
-     })
-     .catch((err)=>{console.log(err)})
-})
-
-router.get('/previous', (req,res)=>{
-    Task.find().sort({createdAt:-1})
-     .then((result)=>{
-        res.render('previous',{tasks:result})
-     })
-     .catch((err)=>{console.log(err)})
-})
+router.get('/active',  taskController.task_active)
+router.get('/previous', taskController.task_previous)
 
 // Create a task
-router.post('/', (req,res)=>{
-    const task = new Task(req.body)
-    task.save()
-     .then((result)=>{
-       res.redirect('/tasks/active')
-     })
-    .catch((err)=>{console.log(err)})
-})
+router.post('/', taskController.task_create_post)
 
 //Get a specific task
-router.get('/:id', (req,res)=>{
-    const id = req.params.id
-    Task.findById(id)
-     .then((result)=>{
-        res.render('details',{taskInfo:result})
-     })
-     .catch((err)=>{console.log(err)})
-})
+router.get('/:id', taskController.task_details)
 
 // Delete a specific task
-router.delete('/:id', (req, res) => {
-    const id = req.params.id;
-    
-    Blog.findByIdAndDelete(id)
-      .then(result => {
-        res.json({ redirect: '/blogs' });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-});
+router.delete('/:id', taskController.task_delete);
 
 
 module.exports = router
