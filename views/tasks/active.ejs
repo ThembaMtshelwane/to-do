@@ -7,14 +7,18 @@
     <h1>Active Tasks</h1> 
     <% if (tasks.length>0) { %>
         <% tasks.forEach(task => {%>
-            <a class="single" href="/tasks/<%= task._id %>">
+            <div class="single" onclick="window.location.href='/tasks/<%= task._id %>'">
                 <h3 class="title"><%=task.title%></h3>
                 <p class="description"><%=task.description%></p>
-            </a>
+            </div>
         <%  }) %>
     <% } else { %>
         <h3>No Active Tasks</h3>
     <% } %>
+
+    <div onclick="window.location.href='/tasks/create'">
+        <p>Add Tasks</p>
+    </div>
     
     
     <%- include('../partials/foot.ejs') %>
