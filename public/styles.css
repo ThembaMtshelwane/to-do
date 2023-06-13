@@ -1,0 +1,31 @@
+body{
+    font-size: 16px;
+    background-color: #151515;
+    color: gainsboro;
+}
+
+/*nav styles*/
+nav{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid gainsboro;
+    border-radius: 5px;
+    justify-content: flex-end
+}
+
+.nav-content{
+ width: 10%;
+ cursor: pointer;
+ text-align: center;
+ box-shadow: inset ;
+ border:1px solid gainsboro;
+}
+
+#logo{
+    flex-grow: 4; /* default 0 */
+    border: 2px solid red;
+    border-radius: 5px 0px 0px 5px;
+}
+
+
+/*dashboard styles*/
