@@ -5,7 +5,7 @@ const Task = require('../models/tasks')
 const task_active = (req,res)=>{
     Task.find().sort({createdAt:-1})
      .then((result)=>{
-        res.render('active',{tasks:result})
+        res.render('tasks/active',{tasks:result})
      })
      .catch((err)=>{console.log(err)})
 }
@@ -13,7 +13,7 @@ const task_active = (req,res)=>{
 const task_previous = (req,res)=>{
     Task.find().sort({createdAt:-1})
     .then((result)=>{
-       res.render('previous',{tasks:result})
+       res.render('tasks/previous',{tasks:result})
     })
     .catch((err)=>{console.log(err)})
 }
@@ -23,14 +23,14 @@ const task_details = (req,res)=>{
     const id = req.params.id
     Task.findById(id)
      .then((result)=>{
-        res.render('details',{taskInfo:result})
+        res.render('tasks/details',{taskInfo:result})
      })
      .catch((err)=>{console.log(err)})
 }
 
 //Go to create task form controller
 const task_get_form= (req,res)=>{
-    res.render('create')
+    res.render('tasks/create')
 }
 
 // Create a task controller
