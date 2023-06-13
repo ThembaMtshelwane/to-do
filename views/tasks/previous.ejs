@@ -2,21 +2,23 @@
 <html lang="en">
     <%- include('../partials/head.ejs') %>
 <body>
-    <%- include('../partials/nav.ejs') %>
+    <main>
+        <%- include('../partials/nav.ejs') %>
    
-    <h1>Previous Tasks</h1> 
-    <% if (tasks.length>0) { %>
-        <% tasks.forEach(task => {%>
-            <div class="single" onclick="window.location.href='/tasks/<%= task._id %>'">
-                <h3 class="title"><%= task.title%></h3>
-                <p class="description"><%= task.description%></p>
-            </div>
-        <%  }) %>
-    <% } else { %>
-        <h3>No Previous Tasks</h3>
-    <% } %>
-    
-    
-    <%- include('../partials/foot.ejs') %>
+        <h1>Previous Tasks</h1> 
+        <% if (tasks.length>0) { %>
+            <% tasks.forEach(task => {%>
+                <div class="single" onclick="window.location.href='/tasks/<%= task._id %>'">
+                    <h3 class="title"><%= task.title%></h3>
+                    <p class="description"><%= task.description%></p>
+                </div>
+            <%  }) %>
+        <% } else { %>
+            <h3>No Previous Tasks</h3>
+        <% } %>
+        
+        <%- include('../partials/foot.ejs') %>
+
+    </main>
 </body>
 </html>

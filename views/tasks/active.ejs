@@ -2,25 +2,31 @@
 <html lang="en">
     <%- include('../partials/head.ejs') %>
 <body>
-    <%- include('../partials/nav.ejs') %>
-   
-    <h1>Active Tasks</h1> 
-    <% if (tasks.length>0) { %>
-        <% tasks.forEach(task => {%>
-            <div class="single" onclick="window.location.href='/tasks/<%= task._id %>'">
-                <h3 class="title"><%=task.title%></h3>
-                <p class="description"><%=task.description%></p>
-            </div>
-        <%  }) %>
-    <% } else { %>
-        <h3>No Active Tasks</h3>
-    <% } %>
 
-    <div onclick="window.location.href='/tasks/create'">
-        <p>Add Tasks</p>
-    </div>
-    
-    
-    <%- include('../partials/foot.ejs') %>
+    <main>
+        <%- include('../partials/nav.ejs') %>
+   
+        <h1>Active Tasks</h1>
+        <div id="all-tasks">
+            <% if (tasks.length>0) { %>
+                <% tasks.forEach(task => {%>
+                    <div class="single-a" onclick="window.location.href='/tasks/<%= task._id %>'">
+                        <h3 class="title"><%=task.title%></h3>
+                        <p class="description"><%=task.description%></p>
+                        <button id="delete-task-btn-1a">Delete</button>
+                        <button id="edit-task-btn-1a">Edit</button>
+                    </div>
+                <%  }) %>
+            <% } else { %>
+                <h3>No Active Tasks</h3>
+            <% } %>
+
+            <button id="add-tasks-btn-a" onclick="window.location.href='/tasks/create'" >Add Tasks</button>
+        </div> 
+                
+        <%- include('../partials/foot.ejs') %>
+
+    </main>
+
 </body>
 </html>
