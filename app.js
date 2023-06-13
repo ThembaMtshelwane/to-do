@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoose =  require('mongoose')
-const Task = require('./models/tasks')
+const taskRoutes = require('./routes/taskRoutes')
 
 const PORT = 3000
 
@@ -40,62 +40,7 @@ app.get('/about', (req,res)=>{
 })
 
 /* ****** Tasks Routes ******/
-
-//Go to create task form
-app.get('/tasks/create', (req,res)=>{
-    res.render('create')
-})
-// Get all tasks
-
-app.get('/tasks/active', (req,res)=>{
-    Task.find().sort({createdAt:-1})
-     .then((result)=>{
-        res.render('active',{tasks:result})
-     })
-     .catch((err)=>{console.log(err)})
-})
-
-app.get('/tasks/previous', (req,res)=>{
-    Task.find().sort({createdAt:-1})
-     .then((result)=>{
-        res.render('previous',{tasks:result})
-     })
-     .catch((err)=>{console.log(err)})
-})
-
-// Create a task
-app.post('/tasks', (req,res)=>{
-    const task = new Task(req.body)
-    task.save()
-     .then((result)=>{
-       res.redirect('/tasks/active')
-     })
-    .catch((err)=>{console.log(err)})
-})
-
-//Get a specific task
-app.get('/tasks/:id', (req,res)=>{
-    const id = req.params.id
-    Task.findById(id)
-     .then((result)=>{
-        res.render('details',{taskInfo:result})
-     })
-     .catch((err)=>{console.log(err)})
-})
-
-// Delete a specific task
-app.delete('/tasks/:id', (req, res) => {
-    const id = req.params.id;
-    
-    Blog.findByIdAndDelete(id)
-      .then(result => {
-        res.json({ redirect: '/blogs' });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  });
-
+app.use('/tasks',taskRoutes)
 
 
 // Page not found
