@@ -102,7 +102,7 @@ label{
     flex-direction: column;
     align-items: center;
 }
-.single-a{
+.single-a,.single-p{
     border: 2px solid;
     border-radius: 5px;
     width: 50%;
@@ -111,7 +111,9 @@ label{
     box-shadow: 1px 1px 5px 0px rgba(235, 113, 50,0.5);
 }
 
-#add-tasks-btn-a,#edit-task-btn-1a,#delete-task-btn-1a{
+#add-tasks-btn-a,#edit-task-btn-1a,#delete-task-btn-1a,
+#active-tasks-btn-p,#edit-task-btn-1p,#delete-task-btn-1p
+{
     margin-top: 10px;
     align-self: center;
     color:rgb(224, 224, 224);
@@ -125,6 +127,19 @@ label{
     width: 25%;
 }
 
-#add-tasks-btn-a{
+#add-tasks-btn-a,#active-tasks-btn-p{
     margin-top: 30px;
+}
+
+
+/*previous task styles*/
+
+.single-p{
+    box-shadow: 1px 1px 5px 0px rgba(242, 123, 155,0.5);
+}
+
+#active-tasks-btn-p,#edit-task-btn-1p,#delete-task-btn-1p
+{
+    background-color:#f27b9b;
+    box-shadow: 1px 1px 5px 0px rgba(242, 123, 155,0.5);
 }
