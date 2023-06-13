@@ -2,18 +2,30 @@
 <html lang="en">
     <%- include('../partials/head.ejs') %>
 <body>
-    <%- include('../partials/nav.ejs') %>  
+
+    <main>
+        <%- include('../partials/nav.ejs') %>  
     
-    <div class="details-content">
-       <h2><%= taskInfo.title%></h2>
-       <div class="description-content">
-           <p><%= taskInfo.description%></p>
-       </div>
-       <a class="delete" data-doc="<%= taskInfo._id %>">
-          <img src="/trashcan.svg" alt="delete icon">
-       </a>
-    </div>
-    <%- include('../partials/foot.ejs') %>
+        <div class="details-content">
+           <h2><%= taskInfo.title%></h2>
+           <div class="description-content">
+               <p><%= taskInfo.description%></p>
+           </div>
+           
+           <a class="delete" data-doc="<%= taskInfo._id %>">
+              <img src="/trashcan.svg" alt="delete icon">
+              <p>Delete</p>
+           </a>
+           <a class="edit" data-doc="<%= taskInfo._id %>">
+            <img src="/pencil.svg" alt="edit icon">
+            <p>Edit</p>
+         </a>
+        </div>
+
+        <%- include('../partials/foot.ejs') %>
+    </main>
+
     <script src="/deleteFunction.js"></script>
 </body>
 </html>
+

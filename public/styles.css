@@ -109,6 +109,7 @@ label{
     text-align: center;
     cursor: pointer;
     box-shadow: 1px 1px 5px 0px rgba(235, 113, 50,0.5);
+    margin-bottom: 50px;
 }
 
 #add-tasks-btn-a,#edit-task-btn-1a,#delete-task-btn-1a,
@@ -142,4 +143,25 @@ label{
 {
     background-color:#f27b9b;
     box-shadow: 1px 1px 5px 0px rgba(242, 123, 155,0.5);
+}
+
+
+.details-content{
+    margin-top: 25px;
+    padding: 10px;
+    box-shadow: 1px 1px 5px 0px rgba(255, 255, 255,0.5);
+}
+
+.edit,.delete{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    background-color: gainsboro;
+    color: black;
+    margin: 2px;
+    padding: 1px;
+    width: 25%;
+    border-radius: 5px;
+   justify-content: center;
+   align-self: center;
 }
