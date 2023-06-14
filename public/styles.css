@@ -79,16 +79,20 @@ label{
 #submit-form-btn{
     margin-top: 10px;
     align-self: center;
-    color: gainsboro;
+    color: #151515;
     background-color: #53d9d1;
     box-shadow: 1px 1px 5px 0px rgba(83, 217, 209,0.5);
     border: 0px solid #151515 ;
     cursor: pointer;
+    height: 50px;
+    border-radius: 5px;
+    width: 20%;
+    text-align: center;
+    padding: 15px;
 }
 
 #submit-form-btn:hover{
-    background-color: #53d9d1;
-    color: #151515;
+    color: gainsboro;
 }
 
 #description, #title{
@@ -164,4 +168,10 @@ label{
     border-radius: 5px;
    justify-content: center;
    align-self: center;
+}
+
+#title,#description{
+    padding: 5px;
+    border: 0px solid white;
+    color: #151515;
 }

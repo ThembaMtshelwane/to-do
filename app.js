@@ -1,15 +1,13 @@
 const express = require('express')
 const mongoose =  require('mongoose')
 const taskRoutes = require('./routes/taskRoutes')
-
-const PORT = 3000
+require('dotenv').config({ path: '.env.local' });
 
 // express app
 const app = express()
 
 // connect to mongoDB
-// mongoose.connect(process.env.DB_URI)
-mongoose.connect('mongodb+srv://themba:themba1@tododatabase.jfdsuva.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect(process.env.DB_URI)
   .then(()=>{
     // listen for requests
     app.listen(process.env.PORT)
