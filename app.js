@@ -24,12 +24,12 @@ app.use(express.static('modules'))
 app.use(express.urlencoded({extended:true}))
 
 //Home Page
-app.get('/', (req,res)=>{
-  res.send("<p>Show animation</p> <a href='/dashbaord'>Dash</a>")
-})
+// app.get('/', (req,res)=>{
+//   res.send("<p>Show animation</p> <a href='/dashbaord'>Dash</a>")
+// })
 
 //  Dashboard Page
-app.get('/dashbaord', (req,res)=>{
+app.get('/', (req,res)=>{
     res.render('dashbaord')
 })
 
