@@ -8,7 +8,8 @@ const PORT = 3000
 const app = express()
 
 // connect to mongoDB
-mongoose.connect(process.env.DB_URI)
+// mongoose.connect(process.env.DB_URI)
+mongoose.connect('mongodb+srv://themba:themba1@tododatabase.jfdsuva.mongodb.net/?retryWrites=true&w=majority')
   .then(()=>{
     // listen for requests
     app.listen(process.env.PORT)
