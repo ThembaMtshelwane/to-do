@@ -22,11 +22,22 @@ nav{
  border:1px solid gainsboro;
 }
 
+.nav-content:hover{
+    box-shadow: 1px 1px 5px 0px rgba(255, 255, 255,0.5);
+}
+
 #logo{
     flex-grow: 4; /* default 0 */
     border-radius: 5px 0px 0px 5px;
 }
 
+.nav-text-a:hover{
+    color:rgba(235, 113, 50,0.5)
+}
+
+.nav-text-p:hover{
+    color: rgba(242, 123, 155,0.5)
+}
 
 /*dashboard styles*/
 h1{
@@ -49,16 +60,19 @@ h1{
 #add-tasks:hover{
     background: #53d9d1;
     color: #151515;
+    box-shadow: 1px 1px 5px 0px rgba(83, 217, 209,0.5);
 }
 
 #active-tasks:hover{
     background:#eb7132;
     color: #151515;
+    box-shadow: 1px 1px 5px 0px rgba(235, 113, 50,0.5);
 }
 
 #previous-tasks:hover{
     background: #f27b9b;
     color: #151515;
+    box-shadow: 1px 1px 5px 0px rgba(242, 123, 155,0.5);
 }
 
 /*create/add task styles*/
@@ -96,6 +110,9 @@ label{
 }
 
 #description, #title{
+    padding: 5px;
+    border: 0px solid white;
+    color: #151515;
     box-shadow: 1px 1px 5px 5px rgba(83, 217, 209,0.5);
 }
 
@@ -168,10 +185,4 @@ label{
     border-radius: 5px;
    justify-content: center;
    align-self: center;
-}
-
-#title,#description{
-    padding: 5px;
-    border: 0px solid white;
-    color: #151515;
 }
