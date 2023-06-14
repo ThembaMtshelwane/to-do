@@ -8,11 +8,10 @@ const PORT = 3000
 const app = express()
 
 // connect to mongoDB
-const dbURI = 'mongodb+srv://thembamm3:A4MJL4wQr3pGxCZD@cluster0.ughmouw.mongodb.net/todos?retryWrites=true&w=majority'
-mongoose.connect(dbURI)
+mongoose.connect(process.env.DB._URI)
   .then(()=>{
     // listen for requests
-    app.listen(PORT)
+    app.listen(process.env.PORT)
   })
   .catch((err)=>{console.log(err)
 })
