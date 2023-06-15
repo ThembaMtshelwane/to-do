@@ -3,8 +3,24 @@ body{
     font-family: 'Dosis', sans-serif;
     background-color: #151515;
     color: gainsboro;    
+    background: linear-gradient(
+        to right,  #53d9d1,#f27b9b,#eb7132
+    );
+    background-size: 400%,400%;
+    animation: body 10s infinite ease-in-out;
 }
 
+@keyframes body {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
 /*nav styles*/
 nav{
     display: flex;
