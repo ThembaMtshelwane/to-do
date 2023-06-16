@@ -47,13 +47,6 @@ nav{
     border-radius: 5px 0px 0px 5px;
 }
 
-.nav-text-a:hover{
-    color:rgba(235, 113, 50,0.5)
-}
-
-.nav-text-p:hover{
-    color: rgba(242, 123, 155,0.5)
-}
 
 /*dashboard styles*/
 h1{
