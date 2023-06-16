@@ -31,7 +31,7 @@ nav{
 }
 
 .nav-content{
- width: 10%;
+ width: 20%;
  cursor: pointer;
  text-align: center;
  box-shadow: inset ;
@@ -43,7 +43,7 @@ nav{
 }
 
 #logo{
-    flex-grow: 4; /* default 0 */
+    flex-grow: 3; 
     border-radius: 5px 0px 0px 5px;
 }
 
